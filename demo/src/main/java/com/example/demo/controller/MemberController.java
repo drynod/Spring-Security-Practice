@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class MemberController {
 
     @GetMapping("/")
-    @ResponseBody
     public String Home(){
         return "home";
     }

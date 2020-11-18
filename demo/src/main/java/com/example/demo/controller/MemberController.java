@@ -17,4 +17,9 @@ public class MemberController {
     public String signIn(){
         return "login";
     }
+
+    @GetMapping("/myPage")
+    public String myPage(){
+        return "menu/myPage";
+    }
 }

@@ -13,3 +13,6 @@
 
 <img src="https://user-images.githubusercontent.com/73692337/99662056-1af3f500-2aa8-11eb-98a0-b9cccf99cbee.JPG" width="100%" height="100%">
 
+- 로그아웃 구현
+- 로그인 시 ID, Password 외 Secret Key 파라미터로 추가 
+

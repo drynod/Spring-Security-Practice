@@ -1,3 +1,13 @@
+body{
+    background-image:url(https://user-images.githubusercontent.com/73692337/99616115-fffd9280-2a5f-11eb-9928-3d826f1865dd.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:100%;
+    height:100vh;
+    overflow:auto;
+}
+
+
 .box {
     width: 500px;
     margin: 200px 0;

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/signUp.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <!---heading---->
+    <header class="heading"> Registration-Form</header>
+    <hr></hr>
+    <!---Form starting---->
+
+    <div class="row ">
+        <form role="form" th:action="@{/signUp}" th:object="${memberDto}" method="post">
+            <!--        ID-->
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <label class="firstname">ID</label></div>
+                    <div class="col-xs-8">
+                        <input type="text" th:field="*{username}" placeholder="Enter your ID" class="form-control ">
+                    </div>
+                </div>
+            </div>
+            <!--Password-->
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <label class="lastname">Password</label></div>
+                    <div class="col-xs-8">
+                        <input type="password" th:field="*{password}" placeholder="Enter your Password"
+                               class="form-control last">
+                    </div>
+                </div>
+            </div>
+
+            <!--     Email-->
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <label class="lastname">Email</label></div>
+                    <div class="col-xs-8">
+                        <input type="email" th:field="*{email}" placeholder="Enter your Email"
+                               class="form-control last">
+                    </div>
+                </div>
+            </div>
+
+            <!--age-->
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <label class="lastname">Age</label></div>
+                    <div class="col-xs-8">
+                        <input type="text" th:field="*{age}" placeholder="Enter your Age"
+                               class="form-control last">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12" style="margin-top: 30px; margin-left: 195px">
+                <input type="submit" class="btn btn-warning" value="회원 가입">
+            </div>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

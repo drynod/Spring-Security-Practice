@@ -11,5 +11,5 @@
 - 회원가입 구현. 비밀번호 Bcrypt로 암호화
 - CustomAuthenticationProvider으로 DB 연동 인증처리(로그인 기능)
 
-![1](https://user-images.githubusercontent.com/73692337/99662056-1af3f500-2aa8-11eb-98a0-b9cccf99cbee.JPG){: width="100%" height="100%"}
-![2](https://user-images.githubusercontent.com/73692337/99662064-1cbdb880-2aa8-11eb-9fab-7e70192dc7e0.JPG){: width="100%" height="100%"}
+<img src="https://user-images.githubusercontent.com/73692337/99662056-1af3f500-2aa8-11eb-98a0-b9cccf99cbee.JPG" width="300" height="300">
+<img src="https://user-images.githubusercontent.com/73692337/99662064-1cbdb880-2aa8-11eb-9fab-7e70192dc7e0.JPG" width="300" height="300">

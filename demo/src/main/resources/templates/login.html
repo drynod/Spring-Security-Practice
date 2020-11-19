@@ -15,6 +15,7 @@
     <header class="heading"> Registration-Form</header><hr></hr>
     <!---Form starting---->
     <form th:action="@{/login_proc}" method="post">
+        <input type="hidden" value="secret" name="secret_key">
     <div class="row ">
         <!--- For Name---->
         <div class="col-sm-12">

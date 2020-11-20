@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <th:block th:replace="fragments/header :: header"></th:block>
+</head>
+<style>
+    .div_box{
+        position: relative;
+        left: 350px;
+        top: 30px;
+        margin-right: 400px;
+    }
+</style>
+
+<body>
+<div>
+    <th:block th:replace="fragments/bodyHeader :: bodyHeader"></th:block>
+</div>
+<div class="div_box">
+    <table class="table">
+        <thead>
+            <th>#</th>
+            <th>제목</th>
+            <th>글쓴이</th>
+            <th>작성일</th>
+        </thead>
+    </table>
+    <div style="position: absolute; right: 0px" >
+        <a th:href="@{/boardDetail}">
+        <input class="btn btn-warning" type="button" value="글쓰기">
+        </a>
+    </div>
+</div>
+
+<div class="div_box">
+</div>
+
+
+
+</body>
+</html>

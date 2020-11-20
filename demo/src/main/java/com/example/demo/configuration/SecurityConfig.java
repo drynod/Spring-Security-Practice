@@ -50,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/signUp").permitAll()
-                .antMatchers("/myPage", "/").hasRole("USER")
+                .antMatchers("/myPage", "/", "/boardList",  "/boardDetail").hasRole("USER")
                 .antMatchers("/messages").hasRole("MANAGER")
                 .antMatchers("/config").hasRole("ADMIN")
                 .anyRequest().authenticated();
@@ -61,5 +61,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticationDetailsSource(authenticationDetailsSource)
                 .loginProcessingUrl("/login_proc")
                 .permitAll();
+
+        http
+                .csrf().disable();
     }
 }

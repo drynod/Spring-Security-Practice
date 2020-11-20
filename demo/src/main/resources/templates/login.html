@@ -12,42 +12,52 @@
 <body>
 <div class="container">
     <!---heading---->
-    <header class="heading"> Registration-Form</header><hr></hr>
+    <header class="heading"> 로그인 </header>
+    <hr></hr>
     <!---Form starting---->
+
     <form th:action="@{/login_proc}" method="post">
         <input type="hidden" value="secret" name="secret_key">
-    <div class="row ">
-        <!--- For Name---->
-        <div class="col-sm-12">
-            <div class="row">
-                <div class="col-xs-4">
-                    <label class="lastname">ID</label> </div>
-                <div class="col-xs-8">
-                    <input type="text" name="username" id="username" placeholder="Enter your ID" class="form-control ">
+        <div class="row ">
+            <!--- For Name---->
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <label class="lastname">ID</label></div>
+                    <div class="col-xs-8">
+                        <input type="text" name="username" id="username" placeholder="Enter your ID"
+                               class="form-control ">
+                    </div>
                 </div>
             </div>
-        </div>
 
 
-        <div class="col-sm-12">
-            <div class="row">
-                <div class="col-xs-4">
-                    <label class="pass">Password</label></div>
-                <div class ="col-xs-8">
-                    <input type="password" name="password" id="password" placeholder="Enter your Password" class="form-control last">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <label class="pass">Password</label></div>
+                    <div class="col-xs-8">
+                        <input type="password" name="password" id="password" placeholder="Enter your Password"
+                               class="form-control last">
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-sm-12">
-            <div class="col-sm-12" style="margin-top: 30px; margin-left: 150px">
-                <input type="submit" class="btn btn-warning" value="로그인">
-                <div class="btn btn-warning" onclick="location.href='/signUp'">회원가입</div>
+            <div class="col-sm-12">
+                <div class="col-sm-12" style="margin-top: 30px; margin-left: 150px">
+                    <input type="submit" class="btn btn-warning" value="로그인">
+                    <div class="btn btn-warning" onclick="location.href='/signUp'">회원가입</div>
+                </div>
             </div>
+
+
         </div>
-    </div>
     </form>
+    <div th:if="${param.error}" class="form-group" style="position: absolute; margin-left: 130px; margin-top: 50px">
+        <span th:text="${exception}" class="alert alert-danger"></span>
+    </div>
 </div>
+
 
 </body>
 </html>

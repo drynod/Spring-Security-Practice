@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <th:block th:replace="fragments/header :: header"></th:block>
+</head>
+
+<style>
+    .div_box{
+        position: relative;
+        left: 350px;
+        top: 30px;
+        margin-right: 400px;
+    }
+
+</style>
+
+<body>
+<th:block th:replace="fragments/bodyHeader :: bodyHeader"></th:block>
+
+<div class="div_box">
+    <h1><span th:text="${username}" class="alert alert-danger"/> 님은 접근 권한이 없습니다! </h1>
+    <br/>
+    <h3 th:text="${exception}"}></h3>
+</div>
+</body>
+</html>

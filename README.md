@@ -28,3 +28,10 @@
   (username 이나 password 값에 따라서 경고문 Login Form에 출력)
 
 <img src="https://user-images.githubusercontent.com/73692337/99804271-1568de80-2b7e-11eb-8349-4c182611acee.JPG" width="50%" height="50%">
+
+
+## 2020-11-21
+
+- Custom Access Deny 구현
+
+- Ajax 로그인, SuccessHandler, FailureHandler 기능 테스트

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class SecurityController {
-    @GetMapping("/denied")
+    @GetMapping(value = {"/denied", "/api/denied"})
     public String accessDenied(@RequestParam(value = "exception", required = false) String exception, Model model){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Member principal = (Member) authentication.getPrincipal();

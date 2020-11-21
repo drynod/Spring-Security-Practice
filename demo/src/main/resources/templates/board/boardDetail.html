@@ -19,7 +19,7 @@
 <th:block th:replace="fragments/bodyHeader :: bodyHeader"></th:block>
 
 <div class="div_box">
-    <form method="post" action="/boardDetail" th:object="${boardDto}">
+    <form method="post" th:action="@{/boardDetail}" th:object="${boardDto}">
         <div class="form-group">
 
             <p><input class="form-inline" placeholder="작성자 입력" type="text" th:field="*{author}">

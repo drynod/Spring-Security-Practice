@@ -28,7 +28,7 @@ public class MemberController {
         return "home";
     }
 
-    @GetMapping("/signIn")
+    @RequestMapping(value = {"/signIn", "/api/login"})
     public String signIn(@RequestParam(value = "error", required = false)String error,
                          @RequestParam(value = "exception", required = false)String exception, Model model){
 
@@ -68,5 +68,12 @@ public class MemberController {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
         return "redirect:/signIn";
+    }
+
+    @GetMapping(value="/messages")
+    @ResponseBody
+    public String messages() throws Exception {
+
+        return "messages Page";
     }
 }

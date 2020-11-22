@@ -1,4 +1,4 @@
-# spring_security_web
+# Spring Security Practice Project
 
 ## 2020-11-16
 
@@ -35,3 +35,4 @@
 - Custom Access Deny 구현
 
 - Ajax 로그인, SuccessHandler, FailureHandler 기능 테스트
+- Ajax 기능 테스트 후 비활성화(다시 Form 방식으로)

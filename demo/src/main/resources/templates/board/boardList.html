@@ -5,7 +5,7 @@
     <th:block th:replace="fragments/header :: header"></th:block>
 </head>
 <style>
-    .div_box{
+    .div_box {
         position: relative;
         left: 350px;
         top: 30px;
@@ -20,22 +20,33 @@
 <div class="div_box">
     <table class="table">
         <thead>
-            <th>#</th>
-            <th>제목</th>
-            <th>글쓴이</th>
-            <th>작성일</th>
+        <th>#</th>
+        <th>제목</th>
+        <th>글쓴이</th>
+        <th>작성일</th>
         </thead>
+        <tbody>
+        <tr th:each="post: ${allBoard}">
+            <td th:text="${post.id}"></td>
+            <td>
+                <a th:href="@{'/boardList/' + ${post.id}}">
+                    <span th:text="${post.title}"></span>
+                </a>
+            </td>
+            <td th:text="${post.author}"></td>
+            <td th:text="${post.localDateTime}"></td>
+        </tr>
+        </tbody>
     </table>
-    <div style="position: absolute; right: 0px" >
+    <div style="position: absolute; right: 0px">
         <a th:href="@{/boardDetail}">
-        <input class="btn btn-warning" type="button" value="글쓰기">
+            <input class="btn btn-warning" type="button" value="글쓰기">
         </a>
     </div>
 </div>
 
 <div class="div_box">
 </div>
-
 
 
 </body>

@@ -13,4 +13,7 @@ public class BoardDto {
     private LocalDateTime localDateTime;
     private String content;
     private String password;
+
+
+
 }

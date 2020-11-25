@@ -36,3 +36,12 @@
 
 - Ajax 로그인, SuccessHandler, FailureHandler 기능 테스트
 - Ajax 기능 테스트 후 비활성화(다시 Form 방식으로)
+
+
+## 2020-11-25
+<img src="https://user-images.githubusercontent.com/73692337/100188762-3c346580-2f2e-11eb-84eb-aa9dad878877.JPG" width="50%" height="50%">
+
+- 게시판 목록 기능 추가
+- SecurityContextHolder 이용, 작성자 아이디 로그인 한 사용자 아이디를 불러옴.
+
+

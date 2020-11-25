@@ -3,6 +3,7 @@ package com.example.demo.domain;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 
@@ -10,7 +11,7 @@ import java.time.LocalDateTime;
 public class BoardDto {
     private String title;
     private String author;
-    private LocalDateTime localDateTime;
+    private LocalDate localDateTime;
     private String content;
     private String password;
 

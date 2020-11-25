@@ -21,10 +21,6 @@
 <div class="div_box">
     <form method="post" th:action="@{/boardDetail}" th:object="${boardDto}">
         <div class="form-group">
-
-            <p><input class="form-inline" placeholder="작성자 입력" type="text" th:field="*{author}">
-                <input class="form-inline" placeholder="패스워드 입력" type="text" th:field="*{password}"></p>
-
             <p><input class="form-control" th:field="*{title}" placeholder="제목 입력"></p>
             <p><textarea style="height: 500px" class="form-control" th:field="*{content}"   placeholder="내용 입력">
 

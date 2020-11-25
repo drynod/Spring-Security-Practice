@@ -3,22 +3,20 @@ package com.example.demo.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
 @Getter @Setter
 public class Board {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="board_id")
     private Long id;
 
     private String title;
     private String author;
-    private LocalDateTime localDateTime;
+    private LocalDate localDateTime;
     private String content;
     private String password;
 }

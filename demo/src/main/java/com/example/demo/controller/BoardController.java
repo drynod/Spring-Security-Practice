@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -46,7 +47,6 @@ public class BoardController {
         ModelMapper modelMapper = new ModelMapper();
         Board board = modelMapper.map(boardDto, Board.class);
 
-        board.setLocalDateTime(LocalDateTime.now());
         boardService.createBoard(board);
         return "redirect:/boardList";
     }

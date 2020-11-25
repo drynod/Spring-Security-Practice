@@ -2,10 +2,14 @@ package com.example.demo.service;
 
 import com.example.demo.domain.Board;
 import com.example.demo.domain.BoardDto;
+import com.example.demo.domain.Member;
 import com.example.demo.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -18,6 +22,11 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public void createBoard(Board board) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        Member principal = (Member) auth.getPrincipal();
+
+        board.setAuthor(principal.getUsername());
+        board.setLocalDateTime(LocalDate.now());
         boardRepository.save(board);
     }
 
@@ -30,7 +39,7 @@ public class BoardServiceImpl implements BoardService {
         boardDto.setTitle(board.getTitle());
         boardDto.setAuthor(board.getAuthor());
         boardDto.setContent(board.getContent());
-        boardDto.setLocalDateTime(LocalDateTime.now());
+        boardDto.setLocalDateTime(LocalDate.now());
 
         return boardDto;
     }

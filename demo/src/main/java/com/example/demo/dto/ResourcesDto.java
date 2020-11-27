@@ -1,5 +1,6 @@
 package com.example.demo.dto;
 
+import com.example.demo.domain.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,5 +21,4 @@ public class ResourcesDto{
     private String resourceType;
     private String roleName;
     private Set<Role> roleSet;
-
 }

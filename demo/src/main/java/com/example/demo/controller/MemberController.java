@@ -54,7 +54,6 @@ public class MemberController {
         ModelMapper modelMapper = new ModelMapper();
         Member member = modelMapper.map(memberDto, Member.class);
         member.setPassword(passwordEncoder.encode(member.getPassword()));
-        member.setRole("ROLE_USER");
         memberService.createUser(member);
 
         return "redirect:/signIn";

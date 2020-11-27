@@ -1,19 +1,24 @@
 package com.example.demo.domain;
 
 import lombok.*;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Getter
 @Setter
+@Data
+@Table(name = "RESOURCES")
+@EqualsAndHashCode(of="id")
+@EntityListeners(value = { AuditingEntityListener.class })
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "RESOURCES")
-public class Resources {
+public class Resources implements Serializable {
 
     @Id
     @GeneratedValue

@@ -30,7 +30,6 @@ import java.security.cert.Extension;
 @Configuration
 @RequiredArgsConstructor
 @EnableWebSecurity
-@Order(1)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final AuthenticationDetailsSource authenticationDetailsSource;

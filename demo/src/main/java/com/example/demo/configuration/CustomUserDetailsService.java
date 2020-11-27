@@ -11,13 +11,17 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 
 @RequiredArgsConstructor
 @Service("userDetailsService")
+@Transactional
 public class CustomUserDetailsService implements UserDetailsService {
 
     private final MemberRepository memberRepository;
@@ -30,10 +34,14 @@ public class CustomUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("UsernameNotFoundException");
         }
 
-        List<GrantedAuthority> roles = new ArrayList<>();
-        roles.add(new SimpleGrantedAuthority(member.getRole()));
 
-        MemberContext memberContext = new MemberContext(member, roles);
-        return memberContext;
+        Set<String> memberRoles = member.getMemberRoles()
+                .stream()
+                .map(memberRole -> memberRole.getRoleName())
+                .collect(Collectors.toSet());
+
+
+        List<GrantedAuthority> collect = memberRoles.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+        return new MemberContext(member, collect);
     }
 }

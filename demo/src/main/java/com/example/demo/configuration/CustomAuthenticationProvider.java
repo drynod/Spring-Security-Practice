@@ -37,12 +37,12 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         }
 
 //      input 태그 속성 hidden 의 secret key 를 받아와서 파라미터로 보내줌.
-        FormWebAuthenticationDetails details = (FormWebAuthenticationDetails) authentication.getDetails();
-        String secretKey = details.getSecretKey();
-
-        if(secretKey == null || !"secret".equals(secretKey)){
-            throw new InsufficientAuthenticationException("InsufficientAuthenticationException");
-        }
+//        FormWebAuthenticationDetails details = (FormWebAuthenticationDetails) authentication.getDetails();
+//        String secretKey = details.getSecretKey();
+//
+//        if(secretKey == null || !"secret".equals(secretKey)){
+//            throw new InsufficientAuthenticationException("InsufficientAuthenticationException");
+//        }
 
 
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
@@ -54,6 +54,6 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     @Override
     public boolean supports(Class<?> authentication) {
-        return UsernamePasswordAuthenticationToken.class.isAssignableFrom(authentication);
+        return authentication.equals(UsernamePasswordAuthenticationToken.class);
     }
 }

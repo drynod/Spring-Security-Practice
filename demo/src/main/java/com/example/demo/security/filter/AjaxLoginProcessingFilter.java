@@ -1,6 +1,6 @@
 package com.example.demo.security.filter;
 
-import com.example.demo.domain.MemberDto;
+import com.example.demo.dto.MemberDto;
 import com.example.demo.security.token.AjaxAuthenticationToken;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

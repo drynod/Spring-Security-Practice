@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.domain.Board;
-import com.example.demo.domain.BoardDto;
+import com.example.demo.dto.BoardDto;
 import com.example.demo.domain.Member;
 import com.example.demo.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
@@ -10,7 +10,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 

@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.domain.Board;
-import com.example.demo.domain.BoardDto;
+import com.example.demo.dto.BoardDto;
 
 import java.util.List;
 

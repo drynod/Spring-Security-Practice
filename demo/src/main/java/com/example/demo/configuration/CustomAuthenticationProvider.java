@@ -36,6 +36,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
             throw new BadCredentialsException("BadCredentialsException");
         }
 
+//      input 태그 속성 hidden 의 secret key 를 받아와서 파라미터로 보내줌.
         FormWebAuthenticationDetails details = (FormWebAuthenticationDetails) authentication.getDetails();
         String secretKey = details.getSecretKey();
 

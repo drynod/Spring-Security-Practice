@@ -45,3 +45,9 @@
 - SecurityContextHolder 이용, 작성자 아이디 로그인 한 사용자 아이디를 불러옴.
 
 
+## 2020-11-27
+
+<img src="https://user-images.githubusercontent.com/73692337/100424445-f663d280-30d0-11eb-99a0-fc32bc55bdc9.JPG" width="40%" height="30%">
+
+- '인가'를 구현하기 위해 role, resources 도메인 추가
+- role 엔티티는 resources와 member 다대다 매핑

@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.domain.Member;
+import com.example.demo.domain.Role;
 import com.example.demo.dto.MemberDto;
 import com.example.demo.service.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashSet;
+import java.util.Set;
 
 @Controller
 @RequiredArgsConstructor
@@ -54,6 +57,7 @@ public class MemberController {
         ModelMapper modelMapper = new ModelMapper();
         Member member = modelMapper.map(memberDto, Member.class);
         member.setPassword(passwordEncoder.encode(member.getPassword()));
+
         memberService.createUser(member);
 
         return "redirect:/signIn";

@@ -22,22 +22,18 @@
                 </li>
 
 
-                <li data-toggle="collapse" data-target="#service" class="collapsed">
-                    <a href="/config"><i class="fa fa-globe fa-lg"></i> 설정 정보 </a>
+                <li sec:authorize="hasRole('ROLE_ADMIN')" data-toggle="collapse" data-target="#service" class="collapsed">
+                    <a href="/admin"><i class="fa fa-globe fa-lg"></i> 관리자 </a>
                 </li>
 
 
                 <li>
+
                     <a href="/myPage">
                         <i class="fa fa-user fa-lg"></i> 프로필
                     </a>
                 </li>
 
-                <li>
-                    <a href="/users">
-                        <i class="fa fa-users fa-lg"></i> 회원 목록
-                    </a>
-                </li>
 
                 <li sec:authorize="isAuthenticated()">
                     <a th:href="@{/signUp}">

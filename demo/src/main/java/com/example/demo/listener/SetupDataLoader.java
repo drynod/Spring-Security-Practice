@@ -53,6 +53,9 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
         roles.add(adminRole);
         createResourceIfNotFound("/admin/**", "", roles, "url");
 
+        Role managerRole = createRoleIfNotFound("ROLE_MANAGER", "매니저권한");
+        Role memberRole = createRoleIfNotFound("ROLE_USER", "사용자권한");
+
         Member member = createMemberIfNotFound("admin", "pass", "admin@gmail.com", "10", roles);
     }
 

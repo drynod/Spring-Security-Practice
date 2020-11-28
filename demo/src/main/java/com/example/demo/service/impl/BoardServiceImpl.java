@@ -1,9 +1,10 @@
-package com.example.demo.service;
+package com.example.demo.service.impl;
 
 import com.example.demo.domain.Board;
 import com.example.demo.dto.BoardDto;
 import com.example.demo.domain.Member;
 import com.example.demo.repository.BoardRepository;
+import com.example.demo.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

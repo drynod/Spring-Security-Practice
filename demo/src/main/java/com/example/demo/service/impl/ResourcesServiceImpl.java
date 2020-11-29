@@ -4,6 +4,7 @@ import com.example.demo.domain.Resources;
 import com.example.demo.repository.ResourcesRepository;
 import com.example.demo.service.ResourcesService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,7 +25,7 @@ public class ResourcesServiceImpl implements ResourcesService {
     @Override
     @Transactional
     public List<Resources> getResources() {
-        return resourcesRepository.findAllResources();
+        return resourcesRepository.findAll(Sort.by(Sort.Order.asc("orderNum")));
     }
 
     @Override

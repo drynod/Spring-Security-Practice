@@ -7,6 +7,7 @@ import com.example.demo.repository.MemberRepository;
 import com.example.demo.repository.RoleRepository;
 import com.example.demo.service.MemberService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class MemberServiceImpl implements MemberService {
     private final MemberRepository memberRepository;
     private final RoleRepository roleRepository;
@@ -37,12 +39,13 @@ public class MemberServiceImpl implements MemberService {
         memberRepository.save(member);
     }
 
+    @Transactional
     @Override
     public void modifyUser(MemberDto memberDto) {
         ModelMapper modelMapper = new ModelMapper();
         Member member = modelMapper.map(memberDto, Member.class);
 
-        if(memberDto.getRole() != null){
+        if(memberDto.getRoles() != null){
             Set<Role> roles = new HashSet<>();
             for (String role : memberDto.getRoles()) {
                 Role r = roleRepository.findByRoleName(role);
@@ -52,6 +55,7 @@ public class MemberServiceImpl implements MemberService {
             member.setMemberRoles(roles);
         }
         member.setPassword(passwordEncoder.encode(memberDto.getPassword()));
+        memberRepository.save(member);
     }
 
     @Transactional
@@ -71,6 +75,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    @Transactional
     public void orders() {
 
     }
@@ -82,6 +87,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    @Transactional
     public void deleteMembers(Long id) {
         memberRepository.deleteById(id);
     }

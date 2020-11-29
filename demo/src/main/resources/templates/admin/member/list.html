@@ -2,12 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+	<th:block th:replace="admin/common/head :: adminHead"></th:block>
 	<th:block th:replace="fragments/header :: header"></th:block>
-	<head th:replace="admin/common/head :: adminHead"></head>
 </head>
 
 <style>
-	.div_box{
+	.div_box {
 		position: relative;
 		left: 350px;
 		top: 30px;
@@ -15,18 +15,23 @@
 	}
 
 </style>
+
+
 <body>
 
 <script type="text/javascript">
-	$(document).ready(function(){
+	$(document).ready(function () {
 	});
-
 </script>
-
 
 <th:block th:replace="fragments/bodyHeader :: bodyHeader"></th:block>
 
 <div class="div_box">
+	<script type="text/javascript">
+		$(document).ready(function(){
+		});
+
+	</script>
 	<div id="maininner"><!-- maininner (s)-->
 		<div class="cc-tab-con">
 			<a href="javascript:void(0);" class="cc-tab-item on">사용자관리</a>		<!--// on : 현재 위치 //-->
@@ -47,7 +52,7 @@
 				<tr class="link_btn hover" th:each="member : ${members}">
 
 					<td style="text-align: left;">
-						<a th:href="@{'/admin/accounts/' + ${member.id}}"><span th:text="${member.username}">회원</span></a>
+						<a th:href="@{'/admin/members/' + ${member.id}}"><span th:text="${member.username}">회원</span></a>
 					</td>
 					<td style="text-align: left;" th:text="${member.email}"></td>
 					<td style="text-align: left;" th:text="${member.age}"></td>

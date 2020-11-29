@@ -30,13 +30,11 @@ public class RoleServiceImpl implements RoleService {
         return roleRepository.findAll();
     }
 
-    @Override
     @Transactional
     public void createRole(Role role) {
         roleRepository.save(role);
     }
 
-    @Override
     @Transactional
     public void deleteRole(Long id) {
         roleRepository.deleteById(id);

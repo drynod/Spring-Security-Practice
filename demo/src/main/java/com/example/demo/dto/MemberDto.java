@@ -8,11 +8,12 @@ import java.util.List;
 @Getter @Setter
 public class MemberDto {
 
+    private String id;
+
     private String username;
     private String password;
 
     private String email;
-    private String role;
     private String age;
 
     private List<String> roles;

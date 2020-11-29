@@ -51,3 +51,11 @@
 
 - '인가'를 구현하기 위해 role, resources 도메인 추가
 - role 엔티티는 resources와 member 다대다 매핑
+
+
+## 2020-11-29
+
+<img src="https://user-images.githubusercontent.com/73692337/100518695-6ad46980-31d6-11eb-9434-bb8d5039343a.JPG" width="50%" height="50%">
+
+- 어드민 페이지에서 회원 목록 
+

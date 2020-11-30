@@ -9,8 +9,8 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <meta id = "_csrf" name="_csrf" th:content="${_csrf.token}"/>
-    <meta id = "_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}"/>
+<!--    <meta id = "_csrf" name="_csrf" th:content="${_csrf.token}"/>-->
+<!--    <meta id = "_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}"/>-->
 </head>
 
 <body>
@@ -49,7 +49,6 @@
 <div class="container">
     <!---heading---->
     <header class="heading"> 로그인 </header>
-    <hr></hr>
     <!---Form starting---->
 
     <form th:action="@{/login_proc}" method="post">

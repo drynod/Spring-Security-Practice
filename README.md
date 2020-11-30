@@ -53,9 +53,13 @@
 - role 엔티티는 resources와 member 다대다 매핑
 
 
-## 2020-11-29
+## 2020-11-28
 
 <img src="https://user-images.githubusercontent.com/73692337/100518695-6ad46980-31d6-11eb-9434-bb8d5039343a.JPG" width="50%" height="50%">
 
 - 어드민 페이지에서 회원 목록 
 
+
+## 2020-11-29
+
+- 권한 관리, 리소스 관리 인터페이스 추가

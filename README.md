@@ -63,3 +63,8 @@
 ## 2020-11-29
 
 - 권한 관리, 리소스 관리 인터페이스 추가
+
+## 2020-11-30
+
+- DB 연동 인가를 위해 FilterInvocationSecurityMetaDataSource 클래스 구현
+- 기능 미완성. 필터를 재설정 해줬기 때문에 Thymeleaf의 security 부분 전부 미작동

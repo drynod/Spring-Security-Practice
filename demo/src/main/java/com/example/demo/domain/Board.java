@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter @Setter
 public class Board {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue
     @Column(name="board_id")
     private Long id;
 

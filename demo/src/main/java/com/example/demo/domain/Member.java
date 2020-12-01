@@ -16,7 +16,7 @@ import java.util.Set;
 @Builder
 public class Member implements Serializable {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue
     @Column(name = "member_id")
     private Long id;
 

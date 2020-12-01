@@ -6,6 +6,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
@@ -17,7 +18,7 @@ import java.util.Set;
 @Getter @Setter
 @EqualsAndHashCode(of = "id")
 public class Role implements Serializable{
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue
     @Column(name = "role_id")
     private Long id;
 
@@ -29,7 +30,7 @@ public class Role implements Serializable{
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "roleSet")
     @OrderBy("orderNum desc")
-    private Set<Resources> resourcesSet = new HashSet<>();
+    private Set<Resources> resourcesSet = new LinkedHashSet<>();
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "memberRoles")
     private Set<Member> members = new HashSet<>();

@@ -17,12 +17,12 @@
                 </li>
 
 
-                <li sec:authorize="hasRole('ROLE_MANAGER')" data-toggle="collapse" data-target="#products" class="collapsed active">
+                <li  data-toggle="collapse" data-target="#products" class="collapsed active">
                     <a href="/messages"><i class="fa fa-gift fa-lg"></i> 메시지 </a>
                 </li>
 
 
-                <li sec:authorize="hasRole('ROLE_ADMIN')" data-toggle="collapse" data-target="#service" class="collapsed">
+                <li  data-toggle="collapse" data-target="#service" class="collapsed">
                     <a href="/admin"><i class="fa fa-globe fa-lg"></i> 관리자 </a>
                 </li>
 
@@ -35,7 +35,7 @@
                 </li>
 
 
-                <li sec:authorize="isAuthenticated()">
+                <li>
                     <a th:href="@{/signUp}">
                         <i class="fa fa-car fa-lg"></i> 회원가입
                     </a>
@@ -47,14 +47,14 @@
                             <div style="float: left">
                                 <i class="fa fa-user fa-lg"></i>
                             </div>
-                            <div style="float:left" sec:authentication="principal.username"></div>
+                            <div style="float:left"></div>
                             <div>&nbsp 님 환영합니다!</div>
                         </a>
                     </div>
                 </li>
 
 
-                <li sec:authorize="isAuthenticated()">
+                <li>
                     <div style="position: fixed; bottom:0px">
                         <a th:href="@{/logout}">
                             <i class="glyphicon glyphicon-off"></i>

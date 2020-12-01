@@ -6,6 +6,7 @@ import com.example.demo.domain.Role;
 import com.example.demo.dto.MemberDto;
 import com.example.demo.dto.ResourcesDto;
 import com.example.demo.dto.RoleDto;
+import com.example.demo.metadata.UrlFilterInvocationSecurityMetaDataSource;
 import com.example.demo.repository.ResourcesRepository;
 import com.example.demo.repository.RoleRepository;
 import com.example.demo.service.MemberService;
@@ -33,6 +34,7 @@ public class AdminController {
     private final RoleService roleService;
     private final RoleRepository roleRepository;
     private final ResourcesService resourcesService;
+    private final UrlFilterInvocationSecurityMetaDataSource filterInvocationSecurityMetaDataSource;
 
 
     @GetMapping("/admin")
@@ -97,6 +99,7 @@ public class AdminController {
         resources.setRoleSet(roles);
 
         resourcesService.createResources(resources);
+        filterInvocationSecurityMetaDataSource.reload();
 
 
         return "redirect:/admin/resources";

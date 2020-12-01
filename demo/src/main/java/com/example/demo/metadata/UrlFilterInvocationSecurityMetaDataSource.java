@@ -1,5 +1,6 @@
 package com.example.demo.metadata;
 
+import com.example.demo.service.SecurityResourceService;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.access.SecurityConfig;
 import org.springframework.security.web.FilterInvocation;
@@ -16,6 +17,13 @@ public class UrlFilterInvocationSecurityMetaDataSource implements FilterInvocati
     private LinkedHashMap<RequestMatcher, List<ConfigAttribute>> requestMap
             = new LinkedHashMap<>();
 
+    private SecurityResourceService securityResourceService;
+
+    public UrlFilterInvocationSecurityMetaDataSource(LinkedHashMap<RequestMatcher, List<ConfigAttribute>> resourcesMap, SecurityResourceService securityResourceService) {
+        this.requestMap = resourcesMap;
+        this.securityResourceService = securityResourceService;
+    }
+
 
     @Override
     public Collection<ConfigAttribute> getAttributes(Object object) throws IllegalArgumentException {
@@ -31,7 +39,6 @@ public class UrlFilterInvocationSecurityMetaDataSource implements FilterInvocati
             }
         }
         return null;
-
     }
 
     @Override
@@ -44,5 +51,17 @@ public class UrlFilterInvocationSecurityMetaDataSource implements FilterInvocati
     @Override
     public boolean supports(Class<?> clazz) {
         return FilterInvocation.class.isAssignableFrom(clazz);
+    }
+
+    public void reload(){
+        LinkedHashMap<RequestMatcher, List<ConfigAttribute>> reloadedMap = securityResourceService.getResourceList();
+        Iterator<Map.Entry<RequestMatcher, List<ConfigAttribute>>> iterator = reloadedMap.entrySet().iterator();
+
+        requestMap.clear();
+
+        while (iterator.hasNext()) {
+            Map.Entry<RequestMatcher, List<ConfigAttribute>> entry = iterator.next();
+            requestMap.put(entry.getKey(), entry.getValue());
+        }
     }
 }

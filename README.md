@@ -72,4 +72,4 @@
 ## 2020-12-01
 
 - 뷰 페이지 thymeleaft security 태그 임시 삭제
-- DB에서 권한을 읽어오기 위한 FactoryBean 
+- DB에서 Role Repository를 읽어오기 위한 FactoryBean 생성

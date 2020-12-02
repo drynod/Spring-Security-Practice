@@ -68,3 +68,8 @@
 
 - DB 연동 인가를 위해 FilterInvocationSecurityMetaDataSource 클래스 구현
 - 기능 미완성. 필터를 재설정 해줬기 때문에 Thymeleaf의 security 부분 전부 미작동
+
+## 2020-12-01
+
+- 뷰 페이지 thymeleaft security 태그 임시 삭제
+- DB에서 권한을 읽어오기 위한 FactoryBean 

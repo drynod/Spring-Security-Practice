@@ -12,7 +12,8 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-public class SecurityResourceService {
+public class
+SecurityResourceService {
 
     private ResourcesRepository resourcesRepository;
 

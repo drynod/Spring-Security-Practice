@@ -18,7 +18,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     @Autowired
-    private UserDetailsService userDetailsService;
+    private CustomUserDetailsService customUserDetailsService;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -30,7 +30,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         String username = authentication.getName();
         String password = (String) authentication.getCredentials();
 
-        MemberContext memberContext = (MemberContext) userDetailsService.loadUserByUsername(username);
+        MemberContext memberContext = (MemberContext) customUserDetailsService.loadUserByUsername(username);
 
         if(!passwordEncoder.matches(password, memberContext.getMember().getPassword())){
             throw new BadCredentialsException("BadCredentialsException");

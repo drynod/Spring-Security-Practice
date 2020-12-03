@@ -122,6 +122,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
+                .antMatchers("/signUp").permitAll()
+                .antMatchers("/admin**").hasRole("ADMIN")
                 .anyRequest().authenticated();
         http
                 .formLogin()
@@ -138,8 +140,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/signIn"))
                 .accessDeniedHandler(accessDeniedHandler());
 
-        http
-                .addFilterAt(customFilterSecurityInterceptor(), FilterSecurityInterceptor.class);
+//        http
+//                .addFilterAt(customFilterSecurityInterceptor(), FilterSecurityInterceptor.class);
 
         http
                 .csrf().disable();
